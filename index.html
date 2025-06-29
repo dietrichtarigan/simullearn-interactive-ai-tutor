@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SimuLearn - Platform Belajar Interaktif dengan AI Tutor</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- Security Headers -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com;">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1a56db',
+                        secondary: '#7c3aed',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                },
+            },
+            plugins: [],
+        }
+    </script>
+    
+    <style>
+        /* Ensure WCAG 2.1 AA compliance for text contrast */
+        .text-primary { color: #1a56db; } /* 4.5:1 contrast ratio */
+        .bg-primary { background-color: #1a56db; }
+        
+        /* Accessibility: Focus states */
+        *:focus-visible {
+            outline: 2px solid #1a56db;
+            outline-offset: 2px;
+        }
+        
+        /* Ensure smooth scrolling for better UX */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Prevent layout shifts */
+        main {
+            min-height: calc(100vh - 64px);
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-900 font-sans antialiased">
+    <!-- Navbar -->
+    <nav class="bg-white shadow-sm" role="navigation">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="/" class="text-xl font-bold text-primary">SimuLearn</a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="#features" class="text-gray-700 hover:text-primary transition-colors">Fitur</a>
+                    <a href="#pricing" class="text-gray-700 hover:text-primary transition-colors">Harga</a>
+                    <button class="bg-primary text-white px-4 py-2 rounded-lg hover:bg-primary/90 transition-colors focus:ring-2 focus:ring-primary/50" aria-label="Mulai Belajar">
+                        Mulai Belajar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative bg-white overflow-hidden">
+        <div class="max-w-7xl mx-auto">
+            <div class="relative z-10 pb-8 bg-white sm:pb-16 md:pb-20 lg:pb-28 xl:pb-32">
+                <main class="mt-10 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
+                    <div class="sm:text-center lg:text-left">
+                        <h1 class="text-4xl tracking-tight font-bold text-gray-900 sm:text-5xl md:text-6xl">
+                            <span class="block">Belajar Lebih Pintar</span>
+                            <span class="block text-primary">dengan AI Tutor Personal</span>
+                        </h1>
+                        <p class="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
+                            Platform belajar interaktif untuk siswa SMA dengan AI Tutor Personal + Simulasi Visual yang membantu memahami Matematika & Fisika dengan lebih mudah.
+                        </p>
+                        <div class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
+                            <div class="rounded-md shadow">
+                                <a href="#" class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-primary hover:bg-primary/90 md:py-4 md:text-lg md:px-10">
+                                    Mulai Gratis
+                                </a>
+                            </div>
+                            <div class="mt-3 sm:mt-0 sm:ml-3">
+                                <a href="#pricing" class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-primary bg-primary/10 hover:bg-primary/20 md:py-4 md:text-lg md:px-10">
+                                    Lihat Paket
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </header>
+
+    <!-- Features Section -->
+    <section id="features" class="py-12 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:text-center">
+                <h2 class="text-3xl font-bold text-gray-900">Fitur Unggulan</h2>
+                <p class="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
+                    Pelajari konsep rumit dengan cara yang menyenangkan dan efektif.
+                </p>
+            </div>
+
+            <div class="mt-10">
+                <div class="space-y-10 md:space-y-0 md:grid md:grid-cols-3 md:gap-x-8 md:gap-y-10">
+                    <!-- AI Tutor Feature -->
+                    <div class="relative">
+                        <div class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-primary text-white">
+                            <i class="fas fa-robot text-xl"></i>
+                        </div>
+                        <p class="ml-16 text-lg font-medium text-gray-900">AI Tutor Personal</p>
+                        <p class="mt-2 ml-16 text-base text-gray-500">
+                            Dapatkan bantuan 24/7 dari AI Tutor yang memahami cara belajarmu.
+                        </p>
+                    </div>
+
+                    <!-- Visual Simulation Feature -->
+                    <div class="relative">
+                        <div class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-primary text-white">
+                            <i class="fas fa-cube text-xl"></i>
+                        </div>
+                        <p class="ml-16 text-lg font-medium text-gray-900">Simulasi Visual</p>
+                        <p class="mt-2 ml-16 text-base text-gray-500">
+                            Pahami konsep abstrak melalui simulasi interaktif yang menarik.
+                        </p>
+                    </div>
+
+                    <!-- Progress Tracking Feature -->
+                    <div class="relative">
+                        <div class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-primary text-white">
+                            <i class="fas fa-chart-line text-xl"></i>
+                        </div>
+                        <p class="ml-16 text-lg font-medium text-gray-900">Progress Tracking</p>
+                        <p class="mt-2 ml-16 text-base text-gray-500">
+                            Pantau perkembangan belajarmu dengan analisis AI yang detail.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-12 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="sm:text-center">
+                <h2 class="text-3xl font-bold text-gray-900">Pilih Paket Belajarmu</h2>
+                <p class="mt-4 text-xl text-gray-500">
+                    Mulai gratis atau upgrade ke premium untuk akses penuh.
+                </p>
+            </div>
+
+            <div class="mt-12 space-y-4 sm:mt-16 sm:space-y-0 sm:grid sm:grid-cols-2 sm:gap-6 lg:max-w-4xl lg:mx-auto xl:max-w-none xl:grid-cols-3">
+                <!-- Free Plan -->
+                <div class="border border-gray-200 rounded-lg shadow-sm p-6 bg-white">
+                    <h3 class="text-lg font-medium text-gray-900">Free Plan</h3>
+                    <p class="mt-4 text-sm text-gray-500">Mulai belajar tanpa biaya</p>
+                    <p class="mt-8">
+                        <span class="text-4xl font-bold text-gray-900">Rp 0</span>
+                        <span class="text-base font-medium text-gray-500">/bulan</span>
+                    </p>
+                    <ul role="list" class="mt-6 space-y-4">
+                        <li class="flex space-x-3">
+                            <i class="fas fa-check text-green-500 flex-shrink-0"></i>
+                            <span class="text-base text-gray-500">Akses 2 bab/bulan</span>
+                        </li>
+                        <li class="flex space-x-3">
+                            <i class="fas fa-check text-green-500 flex-shrink-0"></i>
+                            <span class="text-base text-gray-500">Simulasi terbatas</span>
+                        </li>
+                        <li class="flex space-x-3">
+                            <i class="fas fa-times text-red-500 flex-shrink-0"></i>
+                            <span class="text-base text-gray-500">Tanpa AI tutor</span>
+                        </li>
+                    </ul>
+                    <a href="#" class="mt-8 block w-full bg-primary/10 text-primary px-4 py-2 rounded-lg text-center font-medium hover:bg-primary/20 transition-colors">
+                        Mulai Gratis
+                    </a>
+                </div>
+
+                <!-- Premium Basic -->
+                <div class="border border-primary rounded-lg shadow-sm p-6 bg-white relative">
+                    <div class="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 bg-primary text-white px-3 py-1 rounded-full text-sm font-medium">
+                        Popular
+                    </div>
+                    <h3 class="text-lg font-medium text-gray-900">Premium Basic</h3>
+                    <p class="mt-4 text-sm text-gray-500">Akses penuh dengan AI tutor</p>
+                    <p class="mt-8">
+                        <span class="text-4xl font-bold text-gray-900">Rp 29.000</span>
+                        <span class="text-base font-medium text-gray-500">/bulan</span>
+                    </p>
+                    <ul role="list" class="mt-6 space-y-4">
+                        <li class="flex space-x-3">
+                            <i class="fas fa-check text-green-500 flex-shrink-0"></i>
+                            <span class="text-base text-gray-500">Akses semua bab</span>
+                        </li>
+                        <li class="flex space-x-3">
+                            <i class="fas fa-check text-green-500 flex-shrink-0"></i>
+                            <span class="text-base text-gray-500">AI tutor harian</span>
+                        </li>
+                        <li class="flex space-x-3">
+                            <i class="fas fa-check text-green-500 flex-shrink-0"></i>
+                            <span class="text-base text-gray-500">Latihan & pembahasan</span>
+                        </li>
+                    </ul>
+                    <a href="#" class="mt-8 block w-full bg-primary text-white px-4 py-2 rounded-lg text-center font-medium hover:bg-primary/90 transition-colors">
+                        Pilih Paket
+                    </a>
+                </div>
+
+                <!-- Premium Plus -->
+                <div class="border border-gray-200 rounded-lg shadow-sm p-6 bg-white">
+                    <h3 class="text-lg font-medium text-gray-900">Premium Plus</h3>
+                    <p class="mt-4 text-sm text-gray-500">Pengalaman belajar maksimal</p>
+                    <p class="mt-8">
+                        <span class="text-4xl font-bold text-gray-900">Rp 59.000</span>
+                        <span class="text-base font-medium text-gray-500">/bulan</span>
+                    </p>
+                    <ul role="list" class="mt-6 space-y-4">
+                        <li class="flex space-x-3">
+                            <i class="fas fa-check text-green-500 flex-shrink-0"></i>
+                            <span class="text-base text-gray-500">Semua fitur Premium Basic</span>
+                        </li>
+                        <li class="flex space-x-3">
+                            <i class="fas fa-check text-green-500 flex-shrink-0"></i>
+                            <span class="text-base text-gray-500">Simpan progress</span>
+                        </li>
+                        <li class="flex space-x-3">
+                            <i class="fas fa-check text-green-500 flex-shrink-0"></i>
+                            <span class="text-base text-gray-500">Rekomendasi AI</span>
+                        </li>
+                        <li class="flex space-x-3">
+                            <i class="fas fa-check text-green-500 flex-shrink-0"></i>
+                            <span class="text-base text-gray-500">Custom playlist belajar</span>
+                        </li>
+                    </ul>
+                    <a href="#" class="mt-8 block w-full bg-primary/10 text-primary px-4 py-2 rounded-lg text-center font-medium hover:bg-primary/20 transition-colors">
+                        Pilih Paket
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-50" role="contentinfo">
+        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 gap-8 md:grid-cols-4">
+                <div>
+                    <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase">Tentang</h3>
+                    <ul role="list" class="mt-4 space-y-4">
+                        <li>
+                            <a href="#" class="text-base text-gray-500 hover:text-gray-900">
+                                Tentang Kami
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-base text-gray-500 hover:text-gray-900">
+                                Blog
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase">Legal</h3>
+                    <ul role="list" class="mt-4 space-y-4">
+                        <li>
+                            <a href="#" class="text-base text-gray-500 hover:text-gray-900">
+                                Kebijakan Privasi
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-base text-gray-500 hover:text-gray-900">
+                                Syarat & Ketentuan
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase">Bantuan</h3>
+                    <ul role="list" class="mt-4 space-y-4">
+                        <li>
+                            <a href="#" class="text-base text-gray-500 hover:text-gray-900">
+                                FAQ
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-base text-gray-500 hover:text-gray-900">
+                                Kontak
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase">Sosial Media</h3>
+                    <ul role="list" class="mt-4 space-y-4">
+                        <li>
+                            <a href="#" class="text-base text-gray-500 hover:text-gray-900 flex items-center space-x-2">
+                                <i class="fab fa-instagram"></i>
+                                <span>Instagram</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-base text-gray-500 hover:text-gray-900 flex items-center space-x-2">
+                                <i class="fab fa-youtube"></i>
+                                <span>YouTube</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-8 border-t border-gray-200 pt-8">
+                <p class="text-base text-gray-400 text-center">
+                    &copy; 2024 SimuLearn. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
